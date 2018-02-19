@@ -20,7 +20,7 @@ cd ${basedir}/src
 if [ ! -d octotiger ] ; then
     git clone git@github.com:STEllAR-GROUP/octotiger.git
     cd octotiger
-    git checkout double_loop_comp_int
+    git checkout 96102dc245309617bba82da667726ac17d2df90a
     cd ..
 fi
 cd octotiger
