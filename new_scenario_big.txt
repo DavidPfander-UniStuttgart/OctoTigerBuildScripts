@@ -1,0 +1,10 @@
+# Argumente fuer octotiger
+octotiger_args: -Disableoutput -Problem=moving_star -Max_level=6 -Odt=0.3 -Stoptime=0.2 -Xscale=20.0 -Omega=0.1 -Stopstep=20
+# Expected results
+rho 1.562544e-04 1.978929e-04
+egas 1.735459e-04 2.363025e-04
+sx 5.623704e-03 5.590925e-03
+sy 5.663589e-03 5.617720e-03
+tau 1.878948e-04 1.907071e-04
+primary_core 1.562544e-04 1.978929e-04
+
