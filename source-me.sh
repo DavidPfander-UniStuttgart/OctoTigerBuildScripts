@@ -20,6 +20,25 @@ if [[ `echo $HOSTNAME | grep tave` ]]; then
     export myldflags="-fPIC"
     export HPX_ENABLE_MPI=ON
     export OCTOTIGER_ENABLE_CUDA=OFF
+elif [[ `echo $HOSTNAME | grep cori` ]]; then
+    echo "compiling for cori, doing additional setup";
+    module swap craype-haswell craype-mic-knl
+    module swap PrgEnv-intel PrgEnv-gnu
+    module unload gcc/7.1.0
+    module load gcc/6.3.0
+    module load cmake/3.8.2
+    module unload darshan
+    module load vtune
+    
+    export myarch=${CRAY_CPU_TARGET}
+    export hpxtoolchain=${basedir}/src/hpx/cmake/toolchains/CrayKNL.cmake
+    
+    # special flags for some library builds
+    export mycflags="-fPIC -march=knl -ffast-math"
+    export mycxxflags="-fPIC -march=knl -ffast-math"
+    export myldflags="-fPIC -dynamic"
+    export HPX_ENABLE_MPI=ON
+    export OCTOTIGER_ENABLE_CUDA=OFF
 elif [[ `echo $HOSTNAME | grep daint` ]]; then
     echo "compiling for daint, doing additional setup";
     module switch PrgEnv-cray PrgEnv-gnu
