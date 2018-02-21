@@ -13,7 +13,8 @@ fi
 
 cd ${basedir}/src
 if [ ! -d hpx ] ; then
-    git clone git@github.com:STEllAR-GROUP/hpx.git
+    #git clone git@github.com:STEllAR-GROUP/hpx.git
+    git clone https://github.com/STEllAR-GROUP/hpx.git
     cd hpx
     git checkout 1.0.0
     cd ..
@@ -43,6 +44,7 @@ cmake -DCMAKE_TOOLCHAIN_FILE=${hpxtoolchain}                                    
       -DHPX_WITH_PARCELPORT_MPI_MULTITHREADED=${HPX_ENABLE_MPI}                     \
       -DHPX_WITH_DATAPAR_VC=ON                                                      \
       -DHPX_WITH_DATAPAR_VC_NO_LIBRARY=ON                                           \
+      -DHPX_WITH_MAX_CPU_COUNT=272 \
       -DHPX_WITH_CUDA=OFF                                                           \
       -DVc_ROOT=${builddir}/Vc                                                      \
       -DBOOST_ROOT=$BOOST_ROOT                                                      \
