@@ -1,0 +1,1 @@
+amplxe-cl -finalization-mode=deferred -collect general-exploration -- ./build-mic-knl-Release-jemalloc/octotiger/octotiger -t68 -Disableoutput -Problem=moving_star -Max_level=6 -Odt=0.3 -Stoptime=0.2 -Xscale=20.0 -Omega=0.1 -Stopstep=20 -Ihpx.stacks.use_guard_pages=0
