@@ -14,7 +14,8 @@ fi
 cd ${basedir}/src
 if [ ! -d boost_1_63_0 ] ; then
     if [ ! -f boost_1_63_0.tar.gz ] ; then
-        wget https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz
+       # wget https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz
+        wget http://vorboss.dl.sourceforge.net/project/boost/boost/1.63.0/boost_1_63_0.tar.gz
     fi
     tar xzf boost_1_63_0.tar.gz
 fi
