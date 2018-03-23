@@ -18,7 +18,8 @@ fi
 
 cd ${basedir}/src
 if [ ! -d octotiger ] ; then
-    git clone git@github.com:STEllAR-GROUP/octotiger.git
+    #git clone git@github.com:STEllAR-GROUP/octotiger.git
+    git clone https://github.com/STEllAR-GROUP/octotiger.git
     cd octotiger
     #git checkout master
     git checkout 368ac7c4edb46734bc4a5408e8e01714f63d2274
