@@ -15,9 +15,9 @@ cd ${basedir}/src
 if [ ! -d hpx ] ; then
     git clone https://github.com/STEllAR-GROUP/hpx.git
     cd hpx
-    # git checkout 1.0.0
+    git checkout 1.1.0
     # git checkout cuda_clang
-    git checkout 35bd4d0599906e1e42717f07894e6bedec0cd5b9
+    #git checkout 35bd4d0599906e1e42717f07894e6bedec0cd5b9
     cd ..
 fi
 # cd hpx
@@ -38,6 +38,7 @@ fi
 
 cmake -DCMAKE_TOOLCHAIN_FILE=${hpxtoolchain}                                        \
       -DCMAKE_BUILD_TYPE=$buildtype                                                 \
+      -DCMAKE_CXX_COMPILER=g++-6                                            \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON                                            \
       -DHPX_WITH_THREAD_IDLE_RATES=ON                                               \
       -DHPX_WITH_DISABLED_SIGNAL_EXCEPTION_HANDLERS=ON                              \
@@ -46,6 +47,7 @@ cmake -DCMAKE_TOOLCHAIN_FILE=${hpxtoolchain}                                    
       -DHPX_WITH_DATAPAR_VC=ON                                                      \
       -DHPX_WITH_DATAPAR_VC_NO_LIBRARY=ON                                           \
       -DHPX_WITH_CUDA=OFF                                                           \
+      -DHPX_WITH_NETWORKING=OFF                                                           \
       -DVc_ROOT=${builddir}/Vc                                                      \
       -DBOOST_ROOT=$BOOST_ROOT                                                      \
       ${alloc_opts}                                                                 \
